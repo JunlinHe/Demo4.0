@@ -9,17 +9,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-    <title>Demo4.0</title>
+    <title>终端管理</title>
 
     <!-- Bootstrap本地服务器css文件 -->
-    <link href="framework/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="framework/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
     <!-- 新 Bootstrap 核心 CSS 文件 -->
     <!--<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
-    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
-    <!--<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">-->
 
-    <link rel="stylesheet" type="text/css" href="framework/semantic/components/sidebar.css">
 
+    <link rel="stylesheet" type="text/css" href="framework/semantic/semantic.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -29,21 +29,174 @@
 </head>
 <body>
 
+<!--侧边栏-->
 <div class="ui sidebar">
-    <ul>
-        <li><a>1</a></li>
-        <li><a>2</a></li>
-        <li><a>3</a></li>
-        <li><a>4</a></li>
-    </ul>
+    <!--<ul>-->
+    <!--<li><a>按钮1</a></li>-->
+    <!--<li><a>按钮2</a></li>-->
+    <!--<li><a>按钮3</a></li>-->
+    <!--<li><a>按钮4</a></li>-->
+    <!--</ul>-->
+    <div style="padding: 10px; width: 200px;display: inline-block;">
+        <div id="tree1" class="tree"></div>
+    </div>
+
 </div>
 
-<div class="pusher" style="background: pink;height: 1000px;">
-    <button type="button" class="toc item"> hahah</button>
+<div class="pusher">
+    <!--两端对齐容器-->
+    <div class="ui left aligned container">
+        <button id="callsidebar" class="ui button" data-content="nihao"><i class="align justify icon"></i>打开侧边栏</button>
+
+        <div class="ui pointing secondary menu">
+            <a class="active item" data-tab="first">终端</a>
+            <a class="item" data-tab="second">节目</a>
+            <a class="item" data-tab="third">素材</a>
+            <a class="item" data-tab="four">更多</a>
+        </div>
+        <!--终端管理tab-->
+        <div class="ui active tab segment" data-tab="first">
+            <div class="ui pointing secondary menu">
+                <a class="active item" data-tab="first/a">终端信息</a>
+                <a class="item" data-tab="first/b">终端监控</a>
+                <a class="item" data-tab="first/c">分组管理</a>
+                <div class="right menu">
+                    <!--搜索项-->
+                    <div class="item" style="padding: 3px 0;">
+                        <div class="ui transparent">
+                            <div class="ui teal buttons">
+                                <div class="ui button">搜索</div>
+                                <div class="ui combo top right pointing dropdown icon button">
+                                    <i class="dropdown icon"></i>
+                                    <div class="menu">
+                                        <div class="item"><i class="edit icon"></i> 搜索项1</div>
+                                        <div class="item"><i class="delete icon"></i> 搜索项2</div>
+                                        <div class="item"><i class="hide icon"></i> 搜索项3</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--检索内容-->
+                    <div class="item">
+                        <div class="ui transparent icon input">
+                            <input type="text" placeholder="搜索">
+                            <i class="search link icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui active tab segment" data-tab="first/a">
+
+                <div class="ui buttons">
+                    <button class="ui button">上传文件</button>
+                    <button class="ui button">新建文件夹</button>
+                    <button class="ui button">移动</button>
+                    <button class="ui button">刷新</button>
+                    <button class="ui button">删除</button>
+                </div>
+
+                <table class="ui compact celled definition table">
+                    <thead class="full-width">
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Registration Date</th>
+                        <th>E-mail address</th>
+                        <th>Premium Plan</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="collapsing">
+                            <div class="ui fitted slider checkbox">
+                                <input type="checkbox"> <label></label>
+                            </div>
+                        </td>
+                        <td>John Lilki</td>
+                        <td>September 14, 2013</td>
+                        <td>jhlilk22@yahoo.com</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td class="collapsing">
+                            <div class="ui fitted slider checkbox">
+                                <input type="checkbox"> <label></label>
+                            </div>
+                        </td>
+                        <td>Jamie Harington</td>
+                        <td>January 11, 2014</td>
+                        <td>jamieharingonton@yahoo.com</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td class="collapsing">
+                            <div class="ui fitted slider checkbox">
+                                <input type="checkbox"> <label></label>
+                            </div>
+                        </td>
+                        <td>Jill Lewis</td>
+                        <td>May 11, 2014</td>
+                        <td>jilsewris22@yahoo.com</td>
+                        <td>Yes</td>
+                    </tr>
+                    </tbody>
+                    <tfoot class="full-width">
+                    <tr>
+                        <th></th>
+                        <th colspan="4">
+                            <div class="ui right floated small primary labeled icon button">
+                                <i class="user icon"></i> Add User
+                            </div>
+                            <div class="ui small  button">
+                                Approve
+                            </div>
+                            <div class="ui small  disabled button">
+                                Approve All
+                            </div>
+                        </th>
+                    </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+            <div class="ui tab segment" data-tab="first/b">1B</div>
+            <div class="ui tab segment" data-tab="first/c">1C</div>
+        </div>
+        <!--节目管理-->
+        <div class="ui tab segment" data-tab="second">
+            <div class="ui pointing secondary menu">
+                <a class="active item" data-tab="second/a">节目</a>
+                <a class="item" data-tab="second/b">分组管理</a>
+                <a class="item" data-tab="second/c">2C</a>
+            </div>
+            <div class="ui bottom active tab segment" data-tab="second/a">2A</div>
+            <div class="ui bottom tab segment" data-tab="second/b">2B</div>
+            <div class="ui bottom tab segment" data-tab="second/c">2C</div>
+            <!--<div class="ui top attached tabular menu">-->
+            <!--<a class="active item" data-tab="second/a">节目</a>-->
+            <!--<a class="item" data-tab="second/b">分组管理</a>-->
+            <!--<a class="item" data-tab="second/c">2C</a>-->
+            <!--</div>-->
+            <!--<div class="ui bottom attached active tab segment" data-tab="second/a">2A</div>-->
+            <!--<div class="ui bottom attached tab segment" data-tab="second/b">2B</div>-->
+            <!--<div class="ui bottom attached tab segment" data-tab="second/c">2C</div>-->
+        </div>
+        <!--素材管理-->
+        <div class="ui tab segment" data-tab="third">
+            <div class="ui top attached tabular menu">
+                <a class="active item" data-tab="third/a">素材列表</a>
+                <a class="item" data-tab="third/b">模板列表</a>
+                <a class="item" data-tab="third/c">3C</a>
+            </div>
+            <div class="ui bottom attached tab active segment" data-tab="third/a">3A</div>
+            <div class="ui bottom attached tab segment" data-tab="third/b">3B</div>
+            <div class="ui bottom attached tab segment" data-tab="third/c">3C</div>
+        </div>
+    </div>
+
 
 </div>
-
-
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="framework/bootstrap/js/jquery-1.10.2.min.js"></script>
@@ -52,18 +205,44 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="framework/bootstrap/js/bootstrap.min.js"></script>
-<!--<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+<!--<script src="framework/bootstrap/js/bootstrap.min.js"></script>-->
 
-<script type="text/javascript" src="framework/semantic/components/sidebar.js"></script>
+<!--<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+<script type="text/javascript" src="framework/semantic/semantic.min.js"></script>
 
 <script>
     $(function () {
 
         // create sidebar and attach to menu open
-        $('.ui.sidebar').sidebar('attach events', '.toc.item')
+//        $('.ui.sidebar').sidebar('attach events', '.toc.item');
+
+        $('.ui.sidebar').sidebar('attach events', '#callsidebar');
+
+//        tab切换
+        $('.pointing.menu .item').tab();
+        $('.tabular.menu .item').tab();
+
+//        下拉菜单
+        $('.ui.dropdown')
+            .dropdown({
+                useLabels: false,
+                maxSelections: 3,
+                    action:'combo'
+            })
         ;
 
+//        消息提示
+        $('.ui .button:not(".dropdown")')
+                .popup({
+                    inline   : true,
+                    hoverable: true,
+                    position : 'bottom left',
+                    delay: {
+                        show: 300,
+                        hide: 800
+                    }
+                })
+        ;
     });
 </script>
 </body>
