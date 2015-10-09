@@ -27,6 +27,35 @@
     <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <style>
+
+
+        .pusher > .ui.container{
+            margin-left: 18rem!important;
+            width: inherit;
+        }
+        #callsidebar{
+            display: none;
+        }
+        .pusher > .ui.secondary.vertical.pointing.menu{
+            display: block;
+        }
+
+        /*小屏隐藏侧边菜单*/
+        @media only screen and (max-width:767px){
+            .pusher > .ui.container{
+                margin-left: 0!important;
+            }
+            .pusher > .ui.secondary.vertical.pointing.menu{
+                display: none;
+            }
+            #callsidebar{
+                display: block;
+            }
+        }
+
+    </style>
 </head>
 <body>
 
@@ -38,23 +67,38 @@
     <!--<li><a>按钮3</a></li>-->
     <!--<li><a>按钮4</a></li>-->
     <!--</ul>-->
-    <div style="padding: 10px; width: 200px;display: inline-block;">
-        <div id="tree1" class="tree"></div>
+    <!--<div style="padding: 10px; width: 200px;display: inline-block;">-->
+        <!--<div id="tree1" class="tree"></div>-->
+    <!--</div>-->
+    <div class="ui secondary vertical pointing inverted menu">
+        <a class="active item" data-tab="first">终端</a>
+        <a class="item" data-tab="second">节目</a>
+        <a class="item" data-tab="third">素材</a>
+        <a class="item" data-tab="four">更多</a>
     </div>
-
 </div>
 
-<div class="pusher">
-    <!--两端对齐容器-->
-    <div class="ui left aligned container">
-        <button id="callsidebar" class="ui icon button" data-content="打开侧边栏"><i class="align justify icon"></i></button>
 
-        <div class="ui pointing secondary menu">
+<div class="pusher">
+
+    <!--左侧菜单-->
+    <div class="ui floated segment">
+        <div class="ui secondary vertical pointing menu">
             <a class="active item" data-tab="first">终端</a>
             <a class="item" data-tab="second">节目</a>
             <a class="item" data-tab="third">素材</a>
             <a class="item" data-tab="four">更多</a>
         </div>
+    </div>
+
+    <div class="ui container">
+        <button id="callsidebar" class="ui icon button" data-content="打开侧边栏" style="float: left;position: absolute;">
+            <i class="align justify icon"></i>
+        </button>
+
+
+
+
         <!--终端管理tab-->
         <div class="ui active tab segment" data-tab="first">
             <div class="ui pointing secondary menu">
@@ -152,7 +196,6 @@
                                 </ul>
                             </div>
                         </div>
-
 
                     </div>
                     <div class="twelve wide column">
@@ -261,7 +304,9 @@
             <div class="ui bottom attached tab segment" data-tab="third/b">3B</div>
             <div class="ui bottom attached tab segment" data-tab="third/c">3C</div>
         </div>
+
     </div>
+
 
 
 </div>

@@ -14,7 +14,11 @@
     <!-- Bootstrap本地服务器css文件 -->
     <link href="framework/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="framework/semantic/components/sidebar.css">
+    <!--<link rel="stylesheet" type="text/css" href="framework/semantic/components/sidebar.css">-->
+
+    <link rel="stylesheet" type="text/css" href="framework/jasny-bootstrap/css/jasny-bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="framework/fuelux/css/fuelux.min.css">
     <!-- 新 Bootstrap 核心 CSS 文件 -->
     <!--<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
     <!-- 可选的Bootstrap主题文件（一般不用引入） -->
@@ -26,24 +30,265 @@
     <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            padding: 50px 0 0 0;
+        }
+
+        .navbar-toggle {
+            float: left;
+            margin-left: 15px;
+        }
+
+        @media (min-width: 0) {
+            .navbar-toggle {
+                display: block; /* force showing the toggle */
+            }
+        }
+
+        @media (min-width: 992px) {
+            body {
+                padding: 0;
+            }
+            .navbar {
+                right: auto;
+                background: none;
+                border: none;
+            }
+        }
+
+        /* NAV TABS */
+        .nav-tabs-custom {
+            margin-bottom: 20px;
+            background: #fff;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+            border-radius: 3px;
+        }
+        .nav-tabs-custom > .nav-tabs {
+            margin: 0;
+            border-bottom-color: #f4f4f4;
+            border-top-right-radius: 3px;
+            border-top-left-radius: 3px;
+        }
+        .nav-tabs-custom > .nav-tabs > li {
+            border-top: 3px solid transparent;
+            margin-bottom: -2px;
+            margin-right: 5px;
+        }
+        .nav-tabs-custom > .nav-tabs > li > a {
+            color: #444;
+            border-radius: 0;
+        }
+        .nav-tabs-custom > .nav-tabs > li > a.text-muted {
+            color: #999;
+        }
+        .nav-tabs-custom > .nav-tabs > li > a,
+        .nav-tabs-custom > .nav-tabs > li > a:hover {
+            background: transparent;
+            margin: 0;
+        }
+        .nav-tabs-custom > .nav-tabs > li > a:hover {
+            color: #999;
+        }
+        .nav-tabs-custom > .nav-tabs > li:not(.active) > a:hover,
+        .nav-tabs-custom > .nav-tabs > li:not(.active) > a:focus,
+        .nav-tabs-custom > .nav-tabs > li:not(.active) > a:active {
+            border-color: transparent;
+        }
+        .nav-tabs-custom > .nav-tabs > li.active {
+            border-top-color: #3c8dbc;
+        }
+        .nav-tabs-custom > .nav-tabs > li.active > a,
+        .nav-tabs-custom > .nav-tabs > li.active:hover > a {
+            background-color: #fff;
+            color: #444;
+        }
+        .nav-tabs-custom > .nav-tabs > li.active > a {
+            border-top-color: transparent;
+            border-left-color: #f4f4f4;
+            border-right-color: #f4f4f4;
+        }
+        .nav-tabs-custom > .nav-tabs > li:first-of-type {
+            margin-left: 0;
+        }
+        .nav-tabs-custom > .nav-tabs > li:first-of-type.active > a {
+            border-left-color: transparent;
+        }
+        .nav-tabs-custom > .nav-tabs.pull-right {
+            float: none!important;
+        }
+        .nav-tabs-custom > .nav-tabs.pull-right > li {
+            float: right;
+        }
+        .nav-tabs-custom > .nav-tabs.pull-right > li:first-of-type {
+            margin-right: 0;
+        }
+        .nav-tabs-custom > .nav-tabs.pull-right > li:first-of-type > a {
+            border-left-width: 1px;
+        }
+        .nav-tabs-custom > .nav-tabs.pull-right > li:first-of-type.active > a {
+            border-left-color: #f4f4f4;
+            border-right-color: transparent;
+        }
+        .nav-tabs-custom > .nav-tabs > li.header {
+            line-height: 35px;
+            padding: 0 10px;
+            font-size: 20px;
+            color: #444;
+        }
+        .nav-tabs-custom > .nav-tabs > li.header > .fa,
+        .nav-tabs-custom > .nav-tabs > li.header > .glyphicon,
+        .nav-tabs-custom > .nav-tabs > li.header > .ion {
+            margin-right: 5px;
+        }
+        .nav-tabs-custom > .tab-content {
+            background: #fff;
+            padding: 10px;
+            border-bottom-right-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+        .nav-tabs-custom .dropdown.open > a:active,
+        .nav-tabs-custom .dropdown.open > a:focus {
+            background: transparent;
+            color: #999;
+        }
+    </style>
 </head>
 <body>
+<!--semantic方式侧边栏-->
+<!--<div class="ui sidebar">-->
+    <!--<ul>-->
+        <!--<li><a>1</a></li>-->
+        <!--<li><a>2</a></li>-->
+        <!--<li><a>3</a></li>-->
+        <!--<li><a>4</a></li>-->
+    <!--</ul>-->
+<!--</div>-->
 
-<div class="ui sidebar">
-    <ul>
-        <li><a>1</a></li>
-        <li><a>2</a></li>
-        <li><a>3</a></li>
-        <li><a>4</a></li>
+<!--<div class="pusher" style="height: 1000px;display: none;">-->
+<!--<div class="container">-->
+    <!--<div class="row">-->
+        <!--<div class="col-md-12">-->
+            <!--<button type="button" id="callsidebar" class="btn btn-default">-->
+                <!--<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> 菜单-->
+            <!--</button>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--侧边菜单-->
+<div class="navmenu navmenu-default navmenu-fixed-left offcanvas">
+    <a class="navmenu-brand" href="#">Sky云发布</a>
+    <ul class="nav navmenu-nav">
+        <li><a href="../navmenu/">Slide in</a></li>
+        <li class="active"><a href="./">Push</a></li>
+        <li><a href="../navmenu-reveal/">Reveal</a></li>
+        <li><a href="../navbar-offcanvas/">Off canvas navbar</a></li>
+    </ul>
+    <ul class="nav navmenu-nav">
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <ul class="dropdown-menu navmenu-nav">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+            </ul>
+        </li>
     </ul>
 </div>
 
-<div class="pusher" style="height: 1000px;">
-    <button type="button" id="callsidebar" class="btn btn-default">
-        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> 菜单
+<!--侧边栏按钮-->
+<div class="navbar navbar-default navbar-fixed-top">
+    <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
     </button>
-
 </div>
+<!--主页容器-->
+<div class="container">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <!-- Nav tabs -->
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs" role="tablist" id="myTabs">
+                        <li role="presentation" class="active"><a href="#terminal" aria-controls="terminal" role="tab" data-toggle="tab">终端</a></li>
+                        <li role="presentation"><a href="#show" aria-controls="show" role="tab" data-toggle="tab">节目</a></li>
+                        <li role="presentation"><a href="#material" aria-controls="material" role="tab" data-toggle="tab">素材</a></li>
+                        <li role="presentation">
+                            <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents" aria-expanded="false">更多 <span class="caret"></span></a>
+                            <ul class="dropdown-menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
+                                <li class=""><a href="#more1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1" aria-expanded="false">@more1</a></li>
+                                <li class=""><a href="#more2" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2" aria-expanded="false">@more2</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <!--终端tab-->
+                        <div role="tabpanel" class="tab-pane fade in active" id="terminal">
+
+                            <div class="nav-tabs-custom">
+                                <ul class="nav nav-tabs" role="tablist" id="terminalTabs">
+                                    <li role="presentation" class="active"><a href="#terminalInfo" aria-controls="terminal" role="tab" data-toggle="tab">终端信息</a></li>
+                                    <li role="presentation"><a href="#terminalMonitor" aria-controls="show" role="tab" data-toggle="tab">终端监控</a></li>
+                                    <li role="presentation"><a href="#group" aria-controls="material" role="tab" data-toggle="tab">分组管理</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane fade in active" id="terminalInfo">
+                                        <p>终端信息</p>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade" id="terminalMonitor">
+                                        <p>终端监控</p>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade" id="group">
+                                        <p>分组管理</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--节目tab-->
+                        <div role="tabpanel" class="tab-pane fade" id="show">
+                            <p>sdfsdf</p>
+                        </div>
+                        <!--素材管理tab-->
+                        <div role="tabpanel" class="tab-pane fade" id="material">
+                            <p>dsfsdf</p>
+                        </div>
+                        <!--更多1-->
+                        <div role="tabpanel" class="tab-pane fade" id="more1">
+                            <p>more1</p>
+                        </div>
+                        <!--更多2-->
+                        <div role="tabpanel" class="tab-pane fade" id="more2">
+                            <p>more2</p>
+                        </div>
+                    </div>
+                </div><!--/.main tabs-->
+
+            </div>
+
+        </div>
+    </div>
+</div><!-- /.container -->
 
 
 
@@ -57,16 +302,70 @@
 <script src="framework/bootstrap/js/bootstrap.min.js"></script>
 <!--<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
 
-<script type="text/javascript" src="framework/semantic/components/sidebar.js"></script>
+<!--<script type="text/javascript" src="framework/semantic/components/sidebar.js"></script>-->
+<script type="text/javascript" src="framework/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
 
-
+<script type="text/javascript" src="framework/fuelux/js/fuelux.js"></script>
 <script>
     $(function () {
 
 
         // create sidebar and attach to menu open
-        $('.ui.sidebar').sidebar('attach events', '#callsidebar')
-        ;
+//        $('.ui.sidebar').sidebar('attach events', '#callsidebar');
+
+//        如果tab有更多选项，需要设置tab('show')
+        $('#myTabs a').click(function (e) {
+            e.preventDefault()
+            $(this).tab('show')
+        })
+
+
+        var DataSourceTree = function (options) {
+            this.url = options.url;
+        }
+
+        DataSourceTree.prototype.data = function (options, callback) {
+            var self = this;
+            var $data = null;
+
+            var param = null
+
+            if (!("name" in options) && !("type" in options)) {
+                param = 0;//load the first level
+            }
+            else if ("type" in options && options.type == "folder") {
+                if ("additionalParameters" in options && "children" in options.additionalParameters) {
+                    param = options.additionalParameters["id"];
+                }
+            }
+
+            if (param != null) {
+                $.ajax({
+                    url: this.url,
+                    data: 'id=' + param,
+                    type: 'POST',
+                    dataType: 'json',
+                    success: function (response) {
+                        if (response.status == "OK")
+                            callback({ data: response.data })
+                    },
+                    error: function (response) {
+                        //console.log(response);
+                    }
+                })
+            }
+        };
+
+        $('#[YOURTREEVIEWID]').tree({
+            dataSource: new DataSourceTree({ url: '[PATH TO SERVICE]' }),
+            multiSelect: false,
+            loadingHTML: '<div class="tree-loading"><i class="icon-refresh icon-spin blue"></i></div>',
+            'open-icon': 'icon-minus',
+            'close-icon': 'icon-plus',
+            'selectable': true,
+            'selected-icon': 'icon-ok',
+            'unselected-icon': 'icon-remove'
+        });
 
     });
 </script>
