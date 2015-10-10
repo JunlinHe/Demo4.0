@@ -1,21 +1,62 @@
-.pusher > .container{
-    padding-top: 20px;
-    padding-bottom: 20px;
+@charset "utf-8";
+#mainNav {
+    background: #2185d0;
+}
+#mainNav > .ui.container >.menu > .item{
+    color: #fffff0;
+}
+#mainNav ,#call_sidebar .item,#logo .item,#mainNav .right.menu>.item{
+    height: 50px;
+}
+#logo{
+    font-family: '微软雅黑 Bold', '微软雅黑';
+    font-size: 18px;
+}
+#headNav .item{
+    height: inherit;
+}
+#headNav .active.item:hover {
+    border-color: #fffff0;
+}
+#headNav .active.item {
+    border-color: #fffff0;
 }
 
-/*.pusher > .container > .pointing.secondary.menu{*/
-    /*width: 600px;*/
-    /*margin: 0 auto;*/
+#mainContainer{
+    margin: 3em 1em;
+    width: inherit;
+}
+#mainContainer > .ui.segment{
+    margin-top: 0;
+}
+
+#call_sidebar{
+    display: none;
+}
+/*#call_sidebar .button{*/
+    /*color: #fffff0 !important;*/
 /*}*/
 
-/*.ui.secondary.pointing.menu .item{*/
-    /*font-size: 16px;*/
-    /*width: 150px;*/
-    /*text-align: center;*/
-    /*display: block;*/
-/*}*/
+/*小屏隐藏头菜单*/
+@media only screen and (max-width:767px){
 
-/*��ͼ��ʽ*/
+    #headNav{
+        display: none;
+    }
+    #call_sidebar{
+        display: block;
+    }
+    #call_sidebar .item{
+        padding: .71em;
+    }
+}
+
+.ui.top.attached.tertiary.inverted.segment{
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+/*饼图*/
 .chart {
     position: absolute;
     display: inline-block;

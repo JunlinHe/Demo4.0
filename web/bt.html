@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
@@ -13,8 +12,6 @@
 
     <!-- Bootstrap本地服务器css文件 -->
     <link href="framework/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!--<link rel="stylesheet" type="text/css" href="framework/semantic/components/sidebar.css">-->
 
     <link rel="stylesheet" type="text/css" href="framework/jasny-bootstrap/css/jasny-bootstrap.min.css">
 
@@ -160,27 +157,6 @@
     </style>
 </head>
 <body>
-<!--semantic方式侧边栏-->
-<!--<div class="ui sidebar">-->
-    <!--<ul>-->
-        <!--<li><a>1</a></li>-->
-        <!--<li><a>2</a></li>-->
-        <!--<li><a>3</a></li>-->
-        <!--<li><a>4</a></li>-->
-    <!--</ul>-->
-<!--</div>-->
-
-<!--<div class="pusher" style="height: 1000px;display: none;">-->
-<!--<div class="container">-->
-    <!--<div class="row">-->
-        <!--<div class="col-md-12">-->
-            <!--<button type="button" id="callsidebar" class="btn btn-default">-->
-                <!--<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> 菜单-->
-            <!--</button>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
-<!--</div>-->
 
 <!--侧边菜单-->
 <div class="navmenu navmenu-default navmenu-fixed-left offcanvas">
@@ -309,10 +285,6 @@
 <script>
     $(function () {
 
-
-        // create sidebar and attach to menu open
-//        $('.ui.sidebar').sidebar('attach events', '#callsidebar');
-
 //        如果tab有更多选项，需要设置tab('show')
         $('#myTabs a').click(function (e) {
             e.preventDefault()
@@ -356,7 +328,7 @@
             }
         };
 
-        $('#[YOURTREEVIEWID]').tree({
+        $('#YOURTREEVIEWID').tree({
             dataSource: new DataSourceTree({ url: '[PATH TO SERVICE]' }),
             multiSelect: false,
             loadingHTML: '<div class="tree-loading"><i class="icon-refresh icon-spin blue"></i></div>',

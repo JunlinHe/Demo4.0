@@ -28,100 +28,91 @@
     <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <style>
-
-
-        .pusher > .ui.container{
-            margin-left: 18rem!important;
-            width: inherit;
-        }
-        #callsidebar{
-            display: none;
-        }
-        .pusher > .ui.secondary.vertical.pointing.menu{
-            display: block;
-        }
-
-        /*小屏隐藏侧边菜单*/
-        @media only screen and (max-width:767px){
-            .pusher > .ui.container{
-                margin-left: 0!important;
-            }
-            .pusher > .ui.secondary.vertical.pointing.menu{
-                display: none;
-            }
-            #callsidebar{
-                display: block;
-            }
-        }
-
-    </style>
 </head>
 <body>
 
 <!--侧边栏-->
 <div class="ui sidebar">
-    <!--<ul>-->
-    <!--<li><a>按钮1</a></li>-->
-    <!--<li><a>按钮2</a></li>-->
-    <!--<li><a>按钮3</a></li>-->
-    <!--<li><a>按钮4</a></li>-->
-    <!--</ul>-->
-    <!--<div style="padding: 10px; width: 200px;display: inline-block;">-->
-        <!--<div id="tree1" class="tree"></div>-->
-    <!--</div>-->
     <div class="ui secondary vertical pointing inverted menu">
-        <a class="active item" data-tab="first">终端</a>
-        <a class="item" data-tab="second">节目</a>
-        <a class="item" data-tab="third">素材</a>
-        <a class="item" data-tab="four">更多</a>
+        <a class="active item" data-tab="first"><i class="terminal icon"></i>终端</a>
+        <a class="item" data-tab="second"><i class="file video outline icon"></i>节目</a>
+        <a class="item" data-tab="third"><i class="folder outline icon"></i>素材</a>
+        <a class="item" data-tab="four"><i class="settings icon"></i>系统</a>
     </div>
 </div>
 
-
 <div class="pusher">
 
-    <!--左侧菜单-->
-    <div class="ui floated segment">
-        <div class="ui secondary vertical pointing menu">
-            <a class="active item" data-tab="first">终端</a>
-            <a class="item" data-tab="second">节目</a>
-            <a class="item" data-tab="third">素材</a>
-            <a class="item" data-tab="four">更多</a>
+    <!--导航头-->
+    <div id="mainNav" class="ui top fixed menu" >
+        <div class="ui container">
+            <div id="call_sidebar" class="menu">
+                <div class="item">
+                    <button class="ui blue icon button" data-content="打开侧边栏">
+                        <i class="sidebar icon"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="logo" class="menu">
+                <div class="item">
+                    <i class="big cloud icon"></i>创维云发布
+                </div>
+            </div>
+
+            <div id="headNav"  class="ui secondary  pointing menu">
+                <a class="active item" data-tab="first"><i class="terminal icon"></i>终端</a>
+                <a class="item" data-tab="second"><i class="file video outline icon"></i>节目</a>
+                <a class="item" data-tab="third"><i class="folder outline icon"></i>素材</a>
+                <a class="item" data-tab="four"><i class="settings icon"></i>系统</a>
+            </div>
+
+            <div class="right menu">
+                <!--<div class="item">-->
+                <!--<a class="ui primary button">登录</a>-->
+                <!-- -->
+                <!--</div>-->
+                <div class="ui simple dropdown item">
+                    <i class="user icon"></i>
+                    root
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <div class="item"><i class="user icon"></i>个人资料</div>
+                        <div class="item"><i class="mail icon"></i>消息</div>
+                        <div class="item"><i class="sign out icon"></i>退出</div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-
-    <div class="ui container">
-        <button id="callsidebar" class="ui icon button" data-content="打开侧边栏" style="float: left;position: absolute;">
-            <i class="align justify icon"></i>
-        </button>
+    </div> <!--./mainNav-->
 
 
+    <div id="mainContainer" class="ui container">
 
-
+        <!--<div class="ui segment"></div>-->
         <!--终端管理tab-->
         <div class="ui active tab segment" data-tab="first">
             <div class="ui pointing secondary menu">
-                <a class="active item" data-tab="first/a">终端信息</a>
-                <a class="item" data-tab="first/b">终端监控</a>
-                <a class="item" data-tab="first/c">分组管理</a>
+                <a class="active item" data-tab="first/a"><i class="desktop icon"></i>终端信息</a>
+                <a class="item" data-tab="first/b"><i class="unhide icon"></i>终端监控</a>
+                <a class="item" data-tab="first/c"><i class="setting icon"></i>终端设置</a>
+                <a class="item" data-tab="first/d"><i class="group icon"></i>分组管理</a>
                 <div class="right menu">
                     <!--搜索项-->
-                    <div class="item" style="padding: 3px 0;">
-                        <div class="ui transparent">
-                            <div class="ui buttons">
-                                <div class="ui button">搜索</div>
-                                <div class="ui combo top right pointing dropdown icon button">
-                                    <i class="dropdown icon"></i>
-                                    <div class="menu">
-                                        <div class="item"><i class="edit icon"></i> 搜索项1</div>
-                                        <div class="item"><i class="delete icon"></i> 搜索项2</div>
-                                        <div class="item"><i class="hide icon"></i> 搜索项3</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <!--<div class="item" style="padding: 3px 0;">-->
+                    <!--<div class="ui transparent">-->
+                    <!--<div class="mini ui buttons">-->
+                    <!--<div class="ui button">搜索</div>-->
+                    <!--<div class="ui combo top right pointing dropdown icon button">-->
+                    <!--<i class="dropdown icon"></i>-->
+                    <!--<div class="menu">-->
+                    <!--<div class="item"><i class="edit icon"></i> 搜索项1</div>-->
+                    <!--<div class="item"><i class="delete icon"></i> 搜索项2</div>-->
+                    <!--<div class="item"><i class="hide icon"></i> 搜索项3</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
                     <!--检索内容-->
                     <div class="item">
                         <div class="ui transparent icon input">
@@ -131,39 +122,65 @@
                     </div>
                 </div>
             </div>
-            <div class="ui active tab segment" data-tab="first/a">
+            <div class="ui active tab" data-tab="first/a">
 
                 <div class="ui grid">
                     <div class="one wide column">
                         <!--饼状图-->
-                        <span class="chart" data-percent="75">
-                            <span class="percent"></span>
-                        </span>
+                            <span class="chart" data-percent="75">
+                                <span class="percent"></span>
+                            </span>
                     </div>
-                    <div class="three wide column">
+                    <div class="two wide column">
                         在线终端75/100
                     </div>
-                    <div class="twelve wide column">
-                        <!--表格操作按钮-->
-                        <div class="ui buttons">
-                            <button class="ui button">上传文件</button>
-                            <button class="ui button">新建文件夹</button>
-                            <button class="ui button">移动</button>
-                            <button class="ui button">刷新</button>
-                            <button class="ui button">删除</button>
+                    <!--表格操作按钮-->
+                    <div id="t_table_action" class="thirteen wide column">
+
+                        <div class="ui blue icon buttons">
+                            <button class="ui button" data-content="播放">
+                                <i class="play icon"></i>
+                            </button>
+                            <button class="ui button" data-content="暂停">
+                                <i class="pause icon"></i>
+                            </button>
+                            <button class="ui button" data-content="停止">
+                                <i class="stop icon"></i>
+                            </button>
+                        </div>
+
+                        <div class="ui blue icon buttons">
+                            <button class="ui button" data-content="音量">
+                                <i class="announcement icon"></i>
+                            </button>
+                            <button class="ui button" data-content="重启">
+                                <i class="power icon"></i>
+                            </button>
+                            <button class="ui button" data-content="刷新">
+                                <i class="refresh icon"></i>
+                            </button>
+                        </div>
+                        <div class="ui teal icon buttons" id="tableshowtype">
+                            <button class="ui button active"><i class="grid layout icon"></i></button>
+                            <div class="or"></div>
+                            <button class="ui button"><i class="list layout icon"></i></button>
                         </div>
 
                     </div>
                 </div>
 
                 <!--分隔线-->
-                <div class="ui clearing divider"></div>
+                <div class="ui divider"></div>
 
                 <div class="ui grid">
-                    <div class="four wide column">
+                    <!--左侧菜单-->
+                    <div class="three wide column">
 
+                        <div class="ui top attached tertiary inverted segment">
+                            终端分组
+                        </div>
                         <!--折叠菜单-->
-                        <div class="ui segment accordion">
+                        <div class="ui bottom attached segment accordion">
                             <div class="active title"><i class="dropdown icon"></i> 默认分组 </div>
                             <div class="active content">
                                 <div class="ui animated list">
@@ -198,57 +215,79 @@
                         </div>
 
                     </div>
-                    <div class="twelve wide column">
+                    <!--右侧表格-->
+                    <div class="thirteen wide column">
 
-                        <table class="ui compact sortable definition striped table">
+                        <table class="ui compact sortable striped celled selectable center aligned table">
                             <thead class="full-width">
-                            <tr>
-                                <th></th>
-                                <th>Name</th>
-                                <th>Registration Date</th>
-                                <th>E-mail address</th>
-                                <th>Premium Plan</th>
-                            </tr>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>终端名称</th>
+                                    <th>编号</th>
+                                    <th>分组</th>
+                                    <th>分辨率</th>
+                                    <th>最后心跳时间</th>
+                                    <th>播放状态</th>
+                                    <th>在线状态</th>
+                                    <th>备注</th>
+                                </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td class="collapsing">
-                                    <div class="ui fitted slider checkbox">
-                                        <input type="checkbox"> <label></label>
-                                    </div>
-                                </td>
-                                <td>John Lilki</td>
-                                <td>September 14, 2013</td>
-                                <td>jhlilk22@yahoo.com</td>
-                                <td>No</td>
+                                <td>1</td>
+                                <td>终端名称</td>
+                                <td>1232134</td>
+                                <td>大厦一</td>
+                                <td>1920*1080</td>
+                                <td>2015-10-12 12:12:13</td>
+                                <td>企业展示片</td>
+                                <td>在线</td><td></td>
                             </tr>
                             <tr>
-                                <td class="collapsing">
-                                    <div class="ui fitted slider checkbox">
-                                        <input type="checkbox"> <label></label>
-                                    </div>
-                                </td>
-                                <td>Jamie Harington</td>
-                                <td>January 11, 2014</td>
-                                <td>jamieharingonton@yahoo.com</td>
-                                <td>Yes</td>
+                                <td>1</td>
+                                <td>终端名称</td>
+                                <td>1232134</td>
+                                <td>大厦一</td>
+                                <td>1920*1080</td>
+                                <td>2015-10-12 12:12:13</td>
+                                <td>企业展示片</td>
+                                <td>在线</td><td></td>
                             </tr>
                             <tr>
-                                <td class="collapsing">
-                                    <div class="ui fitted slider checkbox">
-                                        <input type="checkbox"> <label></label>
-                                    </div>
-                                </td>
-                                <td>Jill Lewis</td>
-                                <td>May 11, 2014</td>
-                                <td>jilsewris22@yahoo.com</td>
-                                <td>Yes</td>
+                                <td>1</td>
+                                <td>终端名称</td>
+                                <td>1232134</td>
+                                <td>大厦一</td>
+                                <td>1920*1080</td>
+                                <td>2015-10-12 12:12:13</td>
+                                <td>企业展示片</td>
+                                <td>在线</td><td></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>终端名称</td>
+                                <td>1232134</td>
+                                <td>大厦一</td>
+                                <td>1920*1080</td>
+                                <td>2015-10-12 12:12:13</td>
+                                <td>企业展示片</td>
+                                <td>在线</td><td></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>终端名称</td>
+                                <td>1232134</td>
+                                <td>大厦一</td>
+                                <td>1920*1080</td>
+                                <td>2015-10-12 12:12:13</td>
+                                <td>企业展示片</td>
+                                <td>在线</td><td></td>
                             </tr>
                             </tbody>
                             <tfoot class="full-width">
                             <tr>
                                 <th></th>
-                                <th colspan="4">
+                                <th colspan="8">
                                     <div class="ui right floated pagination menu">
                                         <a class="icon item">
                                             <i class="left chevron icon"></i>
@@ -271,15 +310,16 @@
                 </div>
 
             </div>
-            <div class="ui tab segment" data-tab="first/b">1B</div>
-            <div class="ui tab segment" data-tab="first/c">1C</div>
+            <div class="ui tab" data-tab="first/b">1B</div>
+            <div class="ui tab" data-tab="first/c">1C</div>
+            <div class="ui tab" data-tab="first/d">1C</div>
         </div>
         <!--节目管理-->
         <div class="ui tab segment" data-tab="second">
             <div class="ui pointing secondary menu">
-                <a class="active item" data-tab="second/a">节目</a>
-                <a class="item" data-tab="second/b">分组管理</a>
-                <a class="item" data-tab="second/c">2C</a>
+                <a class="active item" data-tab="second/a">节目信息</a>
+                <a class="item" data-tab="second/b">节目制作</a>
+                <a class="item" data-tab="second/c">分组管理</a>
             </div>
             <div class="ui bottom active tab segment" data-tab="second/a">2A</div>
             <div class="ui bottom tab segment" data-tab="second/b">2B</div>
@@ -298,15 +338,28 @@
             <div class="ui top attached tabular menu">
                 <a class="active item" data-tab="third/a">素材列表</a>
                 <a class="item" data-tab="third/b">模板列表</a>
-                <a class="item" data-tab="third/c">3C</a>
+                <a class="item" data-tab="third/c">分组管理</a>
             </div>
             <div class="ui bottom attached tab active segment" data-tab="third/a">3A</div>
             <div class="ui bottom attached tab segment" data-tab="third/b">3B</div>
             <div class="ui bottom attached tab segment" data-tab="third/c">3C</div>
         </div>
 
-    </div>
+        <!--系统管理-->
+        <div class="ui tab segment" data-tab="four">
+            <div class="ui top attached tabular menu">
+                <a class="active item" data-tab="four/a">系统设置</a>
+                <a class="item" data-tab="four/b">用户管理</a>
+                <a class="item" data-tab="four/c">存储管理</a>
+                <a class="item" data-tab="four/d">授权管理</a>
+            </div>
+            <div class="ui bottom attached tab active segment" data-tab="four/a">4A</div>
+            <div class="ui bottom attached tab segment" data-tab="four/b">4B</div>
+            <div class="ui bottom attached tab segment" data-tab="four/c">4C</div>
+            <div class="ui bottom attached tab segment" data-tab="four/d">4C</div>
+        </div>
 
+    </div>
 
 
 </div>
@@ -335,38 +388,35 @@
 
         // create sidebar and attach to menu open
 //        $('.ui.sidebar').sidebar('attach events', '.toc.item');
-
-        $('.ui.sidebar').sidebar('attach events', '#callsidebar');
+//        侧边栏
+        $('.ui.sidebar').sidebar('attach events', '#call_sidebar');
 
 //        tab切换
         $('.pointing.menu .item').tab();
         $('.tabular.menu .item').tab();
 
 //        下拉菜单
-        $('.ui.dropdown')
-            .dropdown({
-                useLabels: false,
-                maxSelections: 3,
-                    action:'combo'
-            })
-        ;
+//        $('.ui.dropdown')
+//                .dropdown({
+//                    useLabels: false,
+//                    maxSelections: 3,
+//                    action:'combo'
+//                })
+//        ;
 
 //        消息提示
 //        $('.ui .button:not(".dropdown")')
-        $('#callsidebar')
+        $('#call_sidebar .button,#t_table_action .button')
                 .popup({
-                    inline   : true,
                     hoverable: true,
                     position : 'bottom left',
                     delay: {
-                        show: 300,
-                        hide: 800
+                        show: 0,
+                        hide: 300
                     }
                 })
         ;
 
-//        进度
-        $('#example1').progress();
 
 //        折叠菜单
         $('.ui.accordion')
@@ -375,6 +425,12 @@
 
 //        表格排序
         $('table').tablesort();
+
+//        表格样式切换
+        $('#tableshowtype .button').on('click',function(){
+            var $this = $(this);
+            $this.addClass('active').siblings('.button').removeClass('active');
+        });
 
 //        饼图
         $('.chart').easyPieChart({
