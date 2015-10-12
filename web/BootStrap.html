@@ -15,7 +15,9 @@
 
     <!--<link rel="stylesheet" type="text/css" href="framework/jasny-bootstrap/css/jasny-bootstrap.min.css">-->
 
-    <!--<link rel="stylesheet" type="text/css" href="framework/fuelux/css/fuelux.min.css">-->
+    <!--<link href="http://www.fuelcdn.com/fuelux/3.7.3/css/fuelux.min.css" rel="stylesheet"/>-->
+
+    <link href="framework/bootstrap-table/dist/bootstrap-table.css" rel="stylesheet">
 
     <link href="css/bootstrap.css" rel="stylesheet">
 
@@ -33,7 +35,7 @@
 <body>
 
 <!-- 页头 -->
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top sky-custom-nav">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -42,106 +44,160 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="#">创维云发布</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
+            <!--主栏目tab-->
+            <ul class="nav navbar-nav" role="tablist" id="myTabs">
+                <li role="presentation" class="active"><a href="#terminal" aria-controls="terminal" role="tab" data-toggle="tab">终端</a></li>
+                <li role="presentation"><a href="#show" aria-controls="show" role="tab" data-toggle="tab">节目</a></li>
+                <li role="presentation"><a href="#material" aria-controls="material" role="tab" data-toggle="tab">素材</a></li>
+                <li role="presentation">
+                    <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents" aria-expanded="false">系统 <span class="caret"></span></a>
+                    <ul class="dropdown-menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
+                        <li class=""><a href="#more1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1" aria-expanded="false">@more1</a></li>
+                        <li class=""><a href="#more2" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2" aria-expanded="false">@more2</a></li>
                     </ul>
                 </li>
             </ul>
+            <!--用户操作-->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="../navbar/">Default</a></li>
-                <li><a href="../navbar-static-top/">Static top</a></li>
-                <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        用户 <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">个人资料</a></li>
+                        <li><a href="#">消息</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> 退出</a></li>
+                    </ul>
+                </li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
 
-
 <!--主页容器-->
-<div class="container">
-    <div class="container">
+<div class="container sky-custom-container">
 
-        <div class="row">
+    <!-- Nav tabs -->
+    <div class="tab-content">
+        <!--终端tab-->
+        <div role="tabpanel" class="tab-pane fade in active" id="terminal">
 
-            <div class="col-md-12">
-                <!-- Nav tabs -->
-                <div class="nav-tabs-custom">
-                    <ul class="nav nav-tabs" role="tablist" id="myTabs">
-                        <li role="presentation" class="active"><a href="#terminal" aria-controls="terminal" role="tab" data-toggle="tab">终端</a></li>
-                        <li role="presentation"><a href="#show" aria-controls="show" role="tab" data-toggle="tab">节目</a></li>
-                        <li role="presentation"><a href="#material" aria-controls="material" role="tab" data-toggle="tab">素材</a></li>
-                        <li role="presentation">
-                            <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents" aria-expanded="false">更多 <span class="caret"></span></a>
-                            <ul class="dropdown-menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
-                                <li class=""><a href="#more1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1" aria-expanded="false">@more1</a></li>
-                                <li class=""><a href="#more2" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2" aria-expanded="false">@more2</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+            <div class="sky-custom-tabs">
+                <ul class="nav nav-tabs" role="tablist" id="terminalTabs">
+                    <li role="presentation" class="active"><a href="#terminalInfo" aria-controls="terminal" role="tab" data-toggle="tab">终端信息</a></li>
+                    <li role="presentation"><a href="#terminalMonitor" aria-controls="show" role="tab" data-toggle="tab">终端监控</a></li>
+                    <li role="presentation"><a href="#terminalSetting" aria-controls="material" role="tab" data-toggle="tab">终端设置</a></li>
+                    <li role="presentation"><a href="#group" aria-controls="material" role="tab" data-toggle="tab">分组管理</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="terminalInfo">
+                        <div class="row">
+                            <div class="col-md-3">
 
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                        <!--终端tab-->
-                        <div role="tabpanel" class="tab-pane fade in active" id="terminal">
-
-                            <div class="nav-tabs-custom">
-                                <ul class="nav nav-tabs" role="tablist" id="terminalTabs">
-                                    <li role="presentation" class="active"><a href="#terminalInfo" aria-controls="terminal" role="tab" data-toggle="tab">终端信息</a></li>
-                                    <li role="presentation"><a href="#terminalMonitor" aria-controls="show" role="tab" data-toggle="tab">终端监控</a></li>
-                                    <li role="presentation"><a href="#group" aria-controls="material" role="tab" data-toggle="tab">分组管理</a></li>
-                                </ul>
-                                <div class="tab-content">
-                                    <div role="tabpanel" class="tab-pane fade in active" id="terminalInfo">
-                                        <p>终端信息</p>
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade" id="terminalMonitor">
-                                        <p>终端监控</p>
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade" id="group">
-                                        <p>分组管理</p>
+                                <div class="panel  panel-default">
+                                    <div class="panel-heading">终端分组</div>
+                                    <div class="panel-body">
+                                        <!--fuelux树模板-->
+                                        <div class="fuelux">
+                                            <ul id="myTree" class="tree tree-folder-select" role="tree" id="myTree">
+                                                <li class="tree-branch hide" data-template="treebranch" role="treeitem" aria-expanded="false">
+                                                    <div class="tree-branch-header">
+                                                        <button class="glyphicon icon-caret glyphicon-play"><span class="sr-only">Open</span></button>
+                                                        <button class="tree-branch-name">
+                                                            <span class="glyphicon icon-folder glyphicon-folder-close"></span>
+                                                            <span class="tree-label"></span>
+                                                        </button>
+                                                    </div>
+                                                    <ul class="tree-branch-children" role="group"></ul>
+                                                    <div class="tree-loader" role="alert">加载中。。。</div>
+                                                </li>
+                                                <li class="tree-item hide" data-template="treeitem" role="treeitem">
+                                                    <button class="tree-item-name">
+                                                        <span class="glyphicon icon-item fueluxicon-bullet"></span>
+                                                        <span class="tree-label"></span>
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-md-9">
+                                <!--table-->
+                                <div id="toolbar" class="btn-group">
+                                    <button type="button" class="btn btn-default">
+                                        <i class="glyphicon glyphicon-plus"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <i class="glyphicon glyphicon-heart"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <i class="glyphicon glyphicon-trash"></i>
+                                    </button>
+                                </div>
+                                <table data-toggle="table"
+                                       data-url="getdataurl"
+                                       data-click-to-select="true"
+                                       data-query-params="queryParams"
+                                       data-pagination="true"
+                                       data-side-pagination="server"
+                                       data-page-list="[5, 10, 20, 50, 100, 200]"
+                                       data-search="true"
+                                       data-show-refresh="true"
+                                       data-show-toggle="true"
+                                       data-show-columns="true"
+                                       data-toolbar="#toolbar">
+                                    <thead>
+                                    <tr>
+                                        <th data-field="state" data-checkbox="true"></th>
+                                        <th data-field="name" data-sortable="true">Name</th>
+                                        <th data-field="stargazers_count" data-sortable="true">Stars</th>
+                                        <th data-field="forks_count" data-sortable="true">Forks</th>
+                                        <th data-field="description" data-sortable="true">Description</th>
+                                    </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
 
-                        </div>
-                        <!--节目tab-->
-                        <div role="tabpanel" class="tab-pane fade" id="show">
-                            <p>sdfsdf</p>
-                        </div>
-                        <!--素材管理tab-->
-                        <div role="tabpanel" class="tab-pane fade" id="material">
-                            <p>dsfsdf</p>
-                        </div>
-                        <!--更多1-->
-                        <div role="tabpanel" class="tab-pane fade" id="more1">
-                            <p>more1</p>
-                        </div>
-                        <!--更多2-->
-                        <div role="tabpanel" class="tab-pane fade" id="more2">
-                            <p>more2</p>
-                        </div>
                     </div>
-                </div><!--/.main tabs-->
-
+                    <div role="tabpanel" class="tab-pane fade" id="terminalMonitor">
+                        <p>终端监控</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="terminalSetting">
+                        <p>终端设置</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="group">
+                        <p>分组管理</p>
+                    </div>
+                </div>
             </div>
 
         </div>
+        <!--节目tab-->
+        <div role="tabpanel" class="tab-pane fade" id="show">
+            <p>sdfsdf</p>
+        </div>
+        <!--素材管理tab-->
+        <div role="tabpanel" class="tab-pane fade" id="material">
+            <p>dsfsdf</p>
+        </div>
+        <!--更多1-->
+        <div role="tabpanel" class="tab-pane fade" id="more1">
+            <p>more1</p>
+        </div>
+        <!--更多2-->
+        <div role="tabpanel" class="tab-pane fade" id="more2">
+            <p>more2</p>
+        </div>
     </div>
+
 </div><!-- /.container -->
 
 
@@ -159,11 +215,75 @@
 <!--<script type="text/javascript" src="framework/semantic/components/sidebar.js"></script>-->
 <script type="text/javascript" src="framework/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
 
-<script type="text/javascript" src="framework/fuelux/js/fuelux.js"></script>
+<script type="text/javascript" src="framework/bootstrap-table/dist/bootstrap-table.js"></script>
+<!--<script src="http://www.fuelcdn.com/fuelux/3.7.3/js/fuelux.min.js"></script>-->
+<script src="framework/fuelux/js/tree.js"></script>
+
+
 <script>
     $(function () {
 
+        function dynamicDataSource(openedParentData, callback) {
+            var childNodesArray = [];
 
+            // call API, posting options
+            $.ajax({
+                'type': 'post',
+                'url': '/tree/data',
+                'data': openedParentData  // first call with be an empty object
+            }).done(function(data) {
+                // configure datasource
+                var childObjectsArray = data;
+
+                // pass an array with the key 'data' back to the tree
+                // [ {'name': [string], 'type': [string], 'attr': [object] } ]
+                callback({
+                    data: childNodesArray
+                });
+
+            });
+        }
+        function staticDataSource(openedParentData, callback) {
+            console.log(openedParentData);
+            childNodesArray = [
+                {
+                    "name": "分组一",
+                    "type": "folder",
+                    "attr": {
+                        "id": "group1"
+                    }
+                },
+                {
+                    "name": "分组二",
+                    "type": "folder",
+                    "attr": {
+                        "id": "group2"
+                    }
+                }
+            ];
+
+            callback({
+                data: childNodesArray
+            });
+        }
+
+
+        $('#myTree').tree({
+            dataSource: staticDataSource,
+            multiSelect: false,
+            folderSelect: false
+        });
+
+//        表格分页方法
+        function queryParams() {
+            return {
+                type: 'owner',
+                sort: 'updated',
+                direction: 'desc',
+                per_page: 100,
+                page: 1
+            };
+        }
     });
 </script>
 </body>

@@ -20,6 +20,8 @@
 
     <link rel="stylesheet" type="text/css" href="framework/semantic/semantic.min.css">
 
+    <link rel="stylesheet" type="text/css" href="framework/jqgrid/css/ui.jqgrid.css">
+
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -218,7 +220,10 @@
                     <!--右侧表格-->
                     <div class="thirteen wide column">
 
-                        <table class="ui compact sortable striped celled selectable center aligned table">
+                        <table id="jqGrid"></table>
+                        <div id="jqGridPager"></div>
+
+                        <table style="display: none;" class="ui compact sortable striped celled selectable center aligned table">
                             <thead class="full-width">
                                 <tr>
                                     <th>序号</th>
@@ -376,9 +381,9 @@
 <!--<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
 <script type="text/javascript" src="framework/semantic/semantic.min.js"></script>
 
+<script type="text/javascript" src="framework/jqgrid/js/jquery.jqGrid.js"></script>
 <!--表格排序-->
 <script type="text/javascript" src="framework/semantic/third/jquery.tablesort.min.js"></script>
-
 
 <script src="framework/chart/jquery.easing.min.js"></script>
 <script src="framework/chart/jquery.easypiechart.min.js"></script>
@@ -443,6 +448,28 @@
         var chart = window.chart = $('.chart').data('easyPieChart');
         $('.js_update').on('click', function() {
             chart.update(Math.random()*200-100);
+        });
+
+        var jqgrid_data=[
+            {}
+        ];
+        $("#jqGrid").jqGrid({
+            url: 'data.json',
+            datatype: "json",
+            colModel: [
+                { label: 'Category Name', name: 'CategoryName'},
+                { label: 'Product Name', name: 'ProductName' },
+                { label: 'Country', name: 'Country' },
+                { label: 'Price', name: 'Price', sorttype: 'integer' },
+                { label: 'Quantity', name: 'Quantity', sorttype: 'number' }
+            ],
+            loadonce: true,
+            width: 780,
+            height: 200,
+            rowNum: 15,
+            viewrecords: true,
+            pager: "#jqGridPager",
+            caption: "Products / Category Primary Grid View" // set caption to any string you wish and it will appear on top of the grid
         });
     });
 </script>
