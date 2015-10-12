@@ -451,17 +451,26 @@
         });
 
         var jqgrid_data=[
-            {}
+            {'ID':'1','Name':'张三','Any':'某某','Price':'123','Quantity':'3345'},
+            {'ID':'2','Name':'张45三','Any':'某某','Price':'123','Quantity':'345'},
+            {'ID':'3','Name':'张rt三','Any':'某某','Price':'1273','Quantity':'335645'},
+            {'ID':'4','Name':'张df三','Any':'某某','Price':'7263','Quantity':'3345'},
+            {'ID':'5','Name':'张dfg三','Any':'某某','Price':'1723','Quantity':'33445'},
+            {'ID':'6','Name':'张fg三','Any':'某某','Price':'123','Quantity':'33745'},
+            {'ID':'7','Name':'张gf三','Any':'某某','Price':'41423','Quantity':'33405'}
+
         ];
         $("#jqGrid").jqGrid({
-            url: 'data.json',
-            datatype: "json",
+//            url: 'data.json',
+//            datatype: "json",
+            data:jqgrid_data,
+            datatype: 'local',
             colModel: [
-                { label: 'Category Name', name: 'CategoryName'},
-                { label: 'Product Name', name: 'ProductName' },
-                { label: 'Country', name: 'Country' },
-                { label: 'Price', name: 'Price', sorttype: 'integer' },
-                { label: 'Quantity', name: 'Quantity', sorttype: 'number' }
+                { label: '序号', name: 'ID'},
+                { label: '名称', name: 'Name' },
+                { label: '某某', name: 'Any' },
+                { label: '价格', name: 'Price', sorttype: 'integer' },
+                { label: '数量', name: 'Quantity', sorttype: 'number' }
             ],
             loadonce: true,
             width: 780,
