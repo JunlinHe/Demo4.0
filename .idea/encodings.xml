@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/web/css/comment.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web/css/main.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/framework/bootstrap-table/dist/extensions/editable/bootstrap-editable.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/framework/bootstrap-table/dist/extensions/editable/bootstrap-editable.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/framework/bootstrap-table/dist/extensions/export/tableExport.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/framework/slimscroll/jquery.slimscroll.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/js/app.js" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
