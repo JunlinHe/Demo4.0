@@ -5,21 +5,52 @@ html, body {
 body {
     padding: 65px 0 0 0;
 }
+
+/*a标签中的图标居中*/
+
+a.sky-icon-link {
+    display: -webkit-box!important;
+    display: -webkit-flex!important;
+    display: -ms-flexbox!important;
+    display: flex!important;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    /*padding: .85714286em 1.14285714em!important;*/
+}
+
+a.sky-icon-link .glyphicon{
+    top: inherit;
+    margin: 0 .35714286em 0 0!important;
+}
+
 .sky-custom-nav{
     background: #2185d0;
 }
 .sky-custom-nav a{
     color: #fff2f2 !important;
 }
+.sky-custom-nav .dropdown-menu{
+    min-width: inherit;
+}
 .sky-custom-nav .dropdown-menu a{
     color: initial !important;
 }
+
+
 .sky-custom-nav.navbar-default .navbar-nav>.active>a,
 .sky-custom-nav.navbar-default .navbar-nav>.active>a:focus,
 .sky-custom-nav.navbar-default .navbar-nav>.active>a:hover {
     background-color: initial !important;
     border-bottom: 3px solid #f0f7fc;
     padding-bottom: 12px;
+}
+
+.sky-custom-nav .nav .open>a,.sky-custom-nav .nav .open>a:focus,.sky-custom-nav .nav .open>a:hover {
+    background-color: #337ab7;
+    border-color: #337ab7;
 }
 
 .sky-custom-tabs .nav-tabs{
@@ -131,9 +162,10 @@ body {
 
 /*fuelux tree*/
 .fuelux .tree {
-    border: 1px solid #999999;
-    border-radius: 4px 4px 4px 4px;
-    padding: 10px 15px 0 15px;
+    /*border: 1px solid #999999;*/
+    /*border-radius: 4px 4px 4px 4px;*/
+    /*padding: 10px 15px 0 15px;*/
+    padding: 0;
     overflow-x: auto;
     overflow-y: auto;
     position: relative;

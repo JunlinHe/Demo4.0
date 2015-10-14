@@ -15,10 +15,10 @@
     <link href="framework/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- 新 Bootstrap 核心 CSS 文件 -->
     <!--<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
-    <link rel="stylesheet" href="framework/bootstrap/ace-lib/ace.min.css" />
-    <!--[if lte IE 8]>
-    <link rel="stylesheet" href="framework/bootstrap/ace-lib/ace-ie.min.css" />
-    <![endif]-->
+    <!--<link rel="stylesheet" href="framework/bootstrap/ace-lib/ace.min.css" />-->
+    <!--&lt;!&ndash;[if lte IE 8]>-->
+    <!--<link rel="stylesheet" href="framework/bootstrap/ace-lib/ace-ie.min.css" />-->
+    <!--<![endif]&ndash;&gt;-->
 
     <!-- Flat UI 覆盖bootstrap样式-->
     <!--<link href="framework/flatui/css/flat-ui.css" rel="stylesheet">-->
@@ -32,10 +32,10 @@
     <!--<link href="framework/semantic/components/input.css" rel="stylesheet">-->
     <link href="framework/semantic/semantic.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="framework/bootstrap/ace-lib/font-awesome.min.css" />
-    <!--[if IE 7]>
-    <link rel="stylesheet" href="framework/bootstrap/ace-lib/font-awesome-ie7.min.css" />
-    <![endif]-->
+    <!--<link rel="stylesheet" href="framework/bootstrap/ace-lib/font-awesome.min.css" />-->
+    <!--&lt;!&ndash;[if IE 7]>-->
+    <!--<link rel="stylesheet" href="framework/bootstrap/ace-lib/font-awesome-ie7.min.css" />-->
+    <!--<![endif]&ndash;&gt;-->
 
 
 
@@ -214,14 +214,7 @@
 <!--<script type="text/javascript" src="framework/semantic/components/checkbox.js"></script>-->
 <script type="text/javascript" src="framework/semantic/semantic.min.js"></script>
 
-<!-- fuelux树 -->
-<script src="framework/bootstrap/ace-lib/fuelux/data/fuelux.tree-sampledata.js"></script>
-<script src="framework/bootstrap/ace-lib/fuelux/fuelux.tree.min.js"></script>
 
-<!-- ace scripts -->
-
-<script src="framework/bootstrap/ace-lib/ace-elements.min.js"></script>
-<script src="framework/bootstrap/ace-lib/ace.min.js"></script>
 
 <script>
     $(function () {
@@ -232,19 +225,7 @@
 //        $('[data-toggle="switch"]').bootstrapSwitch();
 //        $(':checkbox').radiocheck();
 
-        $('#tree1').ace_tree({
-            dataSource: treeDataSource ,
-            multiSelect:true,
-            loadingHTML:'<div class="tree-loading"><i class="icon-refresh icon-spin blue"></i></div>',
-            'open-icon' : 'icon-minus',
-            'close-icon' : 'icon-plus',
-            'selectable' : true,
-            'selected-icon' : 'icon-ok',
-            'unselected-icon' : 'icon-remove'
-        }).on('selected.fu.tree', function (event, data) {
-            console.log(event);
-            console.log(data);
-        });
+
 
         $('.ui.form').form({
             fields: {

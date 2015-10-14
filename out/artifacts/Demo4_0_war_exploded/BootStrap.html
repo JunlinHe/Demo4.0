@@ -13,7 +13,7 @@
     <!-- Bootstrap本地服务器css文件 -->
     <link href="framework/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!--<link rel="stylesheet" type="text/css" href="framework/jasny-bootstrap/css/jasny-bootstrap.min.css">-->
+    <link rel="stylesheet" type="text/css" href="framework/jasny-bootstrap/css/jasny-bootstrap.css">
 
     <!--<link href="http://www.fuelcdn.com/fuelux/3.7.3/css/fuelux.min.css" rel="stylesheet"/>-->
 
@@ -65,16 +65,16 @@
             <!--用户操作-->
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                    <a href="#" class="dropdown-toggle sky-icon-link" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">
                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                         用户 <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">个人资料</a></li>
-                        <li><a href="#">消息</a></li>
+                        <li><a href="#" class="sky-icon-link"><span class="glyphicon glyphicon-user"></span> 个人资料</a></li>
+                        <li><a href="#" class="sky-icon-link"><span class="glyphicon glyphicon-envelope"></span>  消息</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> 退出</a></li>
+                        <li><a href="#" class="sky-icon-link"><span class="glyphicon glyphicon-log-out"></span> 退出</a></li>
                     </ul>
                 </li>
             </ul>
@@ -83,7 +83,7 @@
 </nav>
 
 <!--主页容器-->
-<div class="container sky-custom-container">
+<div class="container .container-smooth sky-custom-container">
 
     <!-- Nav tabs -->
     <div class="tab-content">
@@ -92,15 +92,31 @@
 
             <div class="sky-custom-tabs">
                 <ul class="nav nav-tabs" role="tablist" id="terminalTabs">
-                    <li role="presentation" class="active"><a href="#terminalInfo" aria-controls="terminal" role="tab" data-toggle="tab">终端信息</a></li>
-                    <li role="presentation"><a href="#terminalMonitor" aria-controls="show" role="tab" data-toggle="tab">终端监控</a></li>
-                    <li role="presentation"><a href="#terminalSetting" aria-controls="material" role="tab" data-toggle="tab">终端设置</a></li>
-                    <li role="presentation"><a href="#group" aria-controls="material" role="tab" data-toggle="tab">分组管理</a></li>
+                    <li role="presentation" class="active">
+                        <a href="#terminalInfo" class="sky-icon-link" aria-controls="terminal" role="tab" data-toggle="tab">
+                            <span class="glyphicon glyphicon-console"></span> 终端信息
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#terminalMonitor" class="sky-icon-link" aria-controls="show" role="tab" data-toggle="tab">
+                            <span class="glyphicon glyphicon-eye-open"></span> 终端监控
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#terminalSetting" class="sky-icon-link" aria-controls="material" role="tab" data-toggle="tab">
+                            <span class="glyphicon glyphicon-cog"></span> 终端设置
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#group" class="sky-icon-link" aria-controls="material" role="tab" data-toggle="tab">
+                            <span class="glyphicon glyphicon-th-list"></span> 分组管理
+                        </a>
+                    </li>
                 </ul>
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane fade in active" id="terminalInfo">
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-md-2">
 
                                 <div class="panel  panel-default">
                                     <div class="panel-heading">终端分组</div>
@@ -130,7 +146,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-9">
+                            <div class="col-md-10">
                                 <!--table-->
                                 <div id="toolbar">
                                     <div class="btn-group">
@@ -206,6 +222,43 @@
 
 </div><!-- /.container -->
 
+<!--弹出提示模态框-->
+<div class="modal fade" id="fadeModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">提示</h4>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary sky-save">保存</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--弹出确认模态框-->
+<div class="modal fade" id="confirmModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">温馨提示</h4>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-default sky-save">确定</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
