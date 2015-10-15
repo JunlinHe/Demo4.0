@@ -21,6 +21,10 @@ a.sky-icon-link {
     /*padding: .85714286em 1.14285714em!important;*/
 }
 
+.glyphicon{
+    top: 2px;
+}
+
 a.sky-icon-link .glyphicon{
     top: inherit;
     margin: 0 .35714286em 0 0!important;

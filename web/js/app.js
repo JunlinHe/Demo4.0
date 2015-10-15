@@ -244,16 +244,16 @@ function responseHandler(res) {
 
 function operateFormatter(value, row, index) {
     return [
-        //'<a class="like" href="javascript:void(0)" data-toggle="modal" data-target="#fadeModal" title="Like">',
-        '<a class="like" href="javascript:void(0)" data-toggle="tooltip" data-placement="bottom" data-original-title="点赞">',
+        '<div class="btn-group">',
+        '<button type="button" class="btn btn-primary btn-xs like">',
         '<i class="glyphicon glyphicon-heart"></i> 点赞',
-        '</a>  ',
-        '<a class="remove" href="javascript:void(0)" data-toggle="tooltip" data-placement="bottom" data-original-title="删除该行">',
+        '</button>  ',
+        '<button type="button" class="btn btn-primary btn-xs remove">',
         '<i class="glyphicon glyphicon-remove"></i> 删除',
-        '</a>'
+        '</button>',
+        '</div>'
     ].join('');
 }
-
 
 window.operateEvents = {
     'click .like': function (e, value, row, index) {
