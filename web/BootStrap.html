@@ -56,13 +56,7 @@
                 <li role="presentation" class="active"><a href="#terminal" aria-controls="terminal" role="tab" data-toggle="tab">终端</a></li>
                 <li role="presentation"><a href="#show" aria-controls="show" role="tab" data-toggle="tab">节目</a></li>
                 <li role="presentation"><a href="#material" aria-controls="material" role="tab" data-toggle="tab">素材</a></li>
-                <li role="presentation">
-                    <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents" aria-expanded="false">系统 <span class="caret"></span></a>
-                    <ul class="dropdown-menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
-                        <li class=""><a href="#more1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1" aria-expanded="false">@more1</a></li>
-                        <li class=""><a href="#more2" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2" aria-expanded="false">@more2</a></li>
-                    </ul>
-                </li>
+                <li role="presentation"><a href="#system" aria-controls="system" role="tab" data-toggle="tab">系统</a></li>
             </ul>
             <!--用户操作-->
             <ul class="nav navbar-nav navbar-right">
@@ -212,14 +206,72 @@
         <div role="tabpanel" class="tab-pane fade" id="material">
             <p>dsfsdf</p>
         </div>
-        <!--更多1-->
-        <div role="tabpanel" class="tab-pane fade" id="more1">
-            <p>more1</p>
+        <!--系统tab-->
+        <div role="tabpanel" class="tab-pane fade" id="system">
+            <div class="sky-custom-tabs">
+                <ul class="nav nav-tabs" role="tablist" id="sysTabs">
+                    <li role="presentation" class="active">
+                        <a href="#statistics" class="sky-icon-link" aria-controls="terminal" role="tab" data-toggle="tab">
+                            <span class="glyphicon glyphicon-stats"></span> 统计
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#syssetting" class="sky-icon-link" aria-controls="show" role="tab" data-toggle="tab">
+                            <span class="glyphicon glyphicon-cog"></span> 系统设置
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#resolution" class="sky-icon-link" aria-controls="material" role="tab" data-toggle="tab">
+                            <span class="glyphicon glyphicon-hd-video"></span> 模板分辨率
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#dbbackup" class="sky-icon-link" aria-controls="material" role="tab" data-toggle="tab">
+                            <span class="glyphicon glyphicon-floppy-disk"></span> 数据库备份
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#authorization" class="sky-icon-link" aria-controls="material" role="tab" data-toggle="tab">
+                            <span class="glyphicon glyphicon-king"></span> 终端授权
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#usermng" class="sky-icon-link" aria-controls="material" role="tab" data-toggle="tab">
+                            <span class="glyphicon glyphicon-user"></span> 用户管理
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#logmng" class="sky-icon-link" aria-controls="material" role="tab" data-toggle="tab">
+                            <span class="glyphicon glyphicon-list-alt"></span> 日志管理
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="statistics">
+                        <p>统计</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="syssetting">
+                        <p>系统设置</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="resolution">
+                        <p>模板分辨率</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="dbbackup">
+                        <p>数据库备份</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade in active" id="authorization">
+                        <p>终端授权</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="usermng">
+                        <p>用户管理</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="logmng">
+                        <p>日志</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!--更多2-->
-        <div role="tabpanel" class="tab-pane fade" id="more2">
-            <p>more2</p>
-        </div>
+
     </div>
 
 </div><!-- /.container -->
